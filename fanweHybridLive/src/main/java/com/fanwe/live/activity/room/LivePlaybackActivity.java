@@ -20,7 +20,7 @@ import com.tencent.TIMCallBack;
 /**
  * Created by Administrator on 2016/8/8.
  */
-public class LivePlaybackActivity extends LivePlayActivity {
+public class LivePlaybackActivity extends LiveBackVideoScrollActivity {
     private RoomPlayControlView mRoomPlayControlView;
     private FrameLayout fl_live_play_control;
 

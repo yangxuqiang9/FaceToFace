@@ -3,6 +3,7 @@ package com.fanwe.hybrid.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
 import com.fanwe.hybrid.event.ERetryInitSuccess;
 import com.fanwe.live.R;

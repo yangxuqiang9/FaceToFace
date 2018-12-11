@@ -288,7 +288,7 @@ public class  LiveLayoutViewerActivity extends LiveLayoutExtendActivity {
      */
     public void setLoadingVideoImageUrl(final String loadingVideoImageUrl) {
         if (iv_loading_video != null && !TextUtils.isEmpty(loadingVideoImageUrl)) {
-//            GlideUtil.load(loadingVideoImageUrl).into(iv_loading_video);
+            GlideUtil.load(loadingVideoImageUrl).into(iv_loading_video);
         }
     }
 

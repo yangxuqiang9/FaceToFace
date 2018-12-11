@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.webkit.CookieManager;
@@ -163,6 +164,8 @@ public class MainActivity extends BaseActivity implements OnCropBitmapListner, P
     }
 
     private void init() {
+
+        Log.i("yangxuqiang","#########44444");
 
         mHandler = new Handler();
         mWebViewCustom.addJavascriptInterface(new O2OShoppingLiveJsHander(this, mWebViewCustom));

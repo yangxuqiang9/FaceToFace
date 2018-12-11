@@ -25,6 +25,7 @@
         android:layout_height="match_parent"/>
 
     <com.fanwe.live.view.SDVerticalScollView
+        android:visibility="gone"
         android:id="@+id/view_vertical_scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -37,6 +38,7 @@
         android:layout_height="match_parent"/>
 
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/view_loading_video"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -48,12 +50,13 @@
             android:scaleType="centerCrop"/>
     </LinearLayout>
 
-    <com.fanwe.live.view.VerticalViewPager
-        android:id="@+id/verticalviewpager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <!--<com.fanwe.live.view.VerticalViewPager-->
+        <!--android:visibility="gone"-->
+        <!--android:id="@+id/verticalviewpager"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
 
-    </com.fanwe.live.view.VerticalViewPager>
+    <!--</com.fanwe.live.view.VerticalViewPager>-->
 
 
     <LinearLayout
@@ -80,5 +83,7 @@
         android:layout_marginTop="5dp"
         android:src="@drawable/selector_user_portrait_back"
         android:visibility="gone"/>
+
+
 
 </RelativeLayout>

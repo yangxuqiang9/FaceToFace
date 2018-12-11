@@ -6,12 +6,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.fanwe.live.R;
@@ -19,24 +17,19 @@ import com.fanwe.live.view.VerticalViewPager;
 
 import java.util.Locale;
 
-public class LiveVideoScrollActivity extends LiveLayoutViewerExtendActivity {
+public class LiveBackVideoScrollActivity extends LivePlayActivity {
 
     private VerticalViewPager verticalViewPager;
 
 
     private static final float MIN_SCALE = 1f;
     private static final float MIN_ALPHA = 1f;
-    private RelativeLayout rootView;
 
     @Override
     protected void init(Bundle savedInstanceState) {
         super.init(savedInstanceState);
 
-
-        rootView = (RelativeLayout) findViewById(R.id.rl_root_view);
-
-
-        initTouch();
+//
 //        verticalViewPager = (VerticalViewPager) findViewById(R.id.verticalviewpager);
 //
 //
@@ -80,64 +73,6 @@ public class LiveVideoScrollActivity extends LiveLayoutViewerExtendActivity {
 //                }
 //            }
 //        });
-    }
-    int x=0;
-    int y=0;
-    int moveX=0;
-    int moveY=0;
-    int bottom=0;
-
-    private void initTouch() {
-//        bottom = rootView.getBottom();
-//        rootView.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View view, MotionEvent event) {
-//                switch (event.getAction()){
-//                    case MotionEvent.ACTION_DOWN:
-//                        x= (int) event.getRawX();
-//                        y = (int) event.getRawY();
-//                        moveX=x;
-//                        moveY=y;
-//                        break;
-//                    case MotionEvent.ACTION_MOVE:
-//                        int moveX = (int) event.getRawX();
-//                        int moveY = (int) event.getRawY();
-//                        int deffX=moveX-x;
-//                        int deffY=moveY-y;
-//                        x=moveX;
-//                        y=moveY;
-//
-//                        int absX = Math.abs(deffX);
-//                        int absY = Math.abs(deffY);
-//                        //上下滑动
-//                        if(absY>20&&(absY-absX)>20){
-//                            bottom=bottom+deffY;
-//                            rootView.setBottom(bottom);
-//                            rootView.invalidate();
-//
-//                            //向下
-//                            if(deffY>0){
-//
-//                                //向上
-//                            }else {
-//
-//                            }
-//                        }
-//                        break;
-//                    case MotionEvent.ACTION_UP:
-//                        x=0;
-//                        y=0;
-//                        break;
-//                }
-//                return true;
-//            }
-//        });
-    }
-
-    private void setPeddingRoot(){
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-
     }
 
     public class DummyAdapter extends FragmentPagerAdapter {

@@ -220,29 +220,30 @@ public class SDVerticalScollView extends RelativeLayout
             @Override
             public boolean onScrollVertical(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY)
             {
-                if (canScrollVertical(distanceY))
-                {
-                    needDealVerticalOnUp = true;
-                    if (topView != null)
-                    {
-                        topView.scrollBy(0, (int) distanceY);
-                    }
-                    if (bottomView != null)
-                    {
-                        bottomView.scrollBy(0, (int) distanceY);
-                    }
-                    verticalView.scrollBy(0, (int) distanceY);
-
-                    if (listenerScroll != null)
-                    {
-                        listenerScroll.onVerticalScroll(e1, e2, distanceX, distanceY);
-                    }
-                    return true;
-                } else
-                {
-                    downY = e2.getRawY();
-                    return false;
-                }
+//                if (canScrollVertical(distanceY))
+//                {
+//                    needDealVerticalOnUp = true;
+//                    if (topView != null)
+//                    {
+//                        topView.scrollBy(0, (int) distanceY);
+//                    }
+//                    if (bottomView != null)
+//                    {
+//                        bottomView.scrollBy(0, (int) distanceY);
+//                    }
+//                    verticalView.scrollBy(0, (int) distanceY);
+//
+//                    if (listenerScroll != null)
+//                    {
+//                        listenerScroll.onVerticalScroll(e1, e2, distanceX, distanceY);
+//                    }
+//                    return true;
+//                } else
+//                {
+//                    downY = e2.getRawY();
+//                    return false;
+//                }
+                return false;
             }
 
             @Override

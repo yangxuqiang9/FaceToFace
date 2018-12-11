@@ -2,6 +2,7 @@ package com.fanwe.live.appview;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 
 import com.fanwe.live.control.LivePlayerSDK;
 import com.fanwe.live.control.LivePushSDK;
@@ -15,6 +16,7 @@ public class LiveVideoView extends TXCloudVideoView
 {
     private LivePlayerSDK playerSDK;
     private LivePushSDK pushSDK;
+    private OnTouchEventListener listener;
 
     public LiveVideoView(Context context)
     {
@@ -90,5 +92,56 @@ public class LiveVideoView extends TXCloudVideoView
             pushSDK.onDestroy();
             pushSDK = null;
         }
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int x=0;
+        int y=0;
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                x= (int) event.getX();
+                y = (int) event.getY();
+
+                break;
+            case MotionEvent.ACTION_MOVE:
+                int moveX = (int) event.getX();
+                int moveY = (int) event.getY();
+                int deffX=moveX-x;
+                int deffY=moveY-y;
+
+                int absX = Math.abs(deffX);
+                int absY = Math.abs(deffY);
+                //上下滑动
+                if(absY>20&&(absY-absX)>20){
+                    //向下
+                    if(deffY>0){
+                        if(listener!=null){
+                            listener.moveUP(getX()+deffX,getY()-deffY);
+                        }
+                    //向上
+                    }else {
+                        if(listener!=null){
+                            listener.moveDown(getX()+deffX,getY()-deffY);
+                        }
+                    }
+                }
+                return true;
+            case MotionEvent.ACTION_UP:
+                x=0;
+                y=0;
+                break;
+        }
+
+        return super.onTouchEvent(event);
+    }
+
+    public void setListener(OnTouchEventListener listener){
+        this.listener=listener;
+    }
+
+    public interface OnTouchEventListener{
+        void moveUP(float x,float y);
+        void moveDown(float x,float y);
     }
 }
